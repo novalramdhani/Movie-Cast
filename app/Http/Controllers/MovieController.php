@@ -7,15 +7,22 @@ use Illuminate\Support\Facades\Http;
 
 class MovieController extends Controller
 {
+    private $apiKey;
+
+    public function __construct()
+    {
+        $this->apiKey = config('services.tmdb.api_key');
+    }
+
     public function index()
     {
-        $popularMovies = Http::get('https://api.themoviedb.org/3/movie/popular?api_key=86c8a3be2a4d1c76b27dd84ae53b2ca4')
+        $popularMovies = Http::get("https://api.themoviedb.org/3/movie/popular?api_key={$this->apiKey}")
                                 ->json()['results'];
 
-        $nowPlayingMovies = Http::get('https://api.themoviedb.org/3/movie/now_playing?api_key=86c8a3be2a4d1c76b27dd84ae53b2ca4')
+        $nowPlayingMovies = Http::get("https://api.themoviedb.org/3/movie/now_playing?api_key={$this->apiKey}")
                                 ->json()['results'];
 
-        $genresMovies = Http::get('https://api.themoviedb.org/3//genre/movie/list?api_key=86c8a3be2a4d1c76b27dd84ae53b2ca4')
+        $genresMovies = Http::get("https://api.themoviedb.org/3//genre/movie/list?api_key={$this->apiKey}")
                                 ->json()['genres'];
 
         $genres = collect($genresMovies)->mapWithKeys(function ($key) {
@@ -31,7 +38,7 @@ class MovieController extends Controller
 
     public function show($id)
     {
-        $getMovie = Http::get("https://api.themoviedb.org/3/movie/{$id}?api_key=86c8a3be2a4d1c76b27dd84ae53b2ca4&append_to_response=credits,videos,images")
+        $getMovie = Http::get("https://api.themoviedb.org/3/movie/{$id}?api_key={$this->apiKey}&append_to_response=credits,videos,images")
         ->json();
 
         return view('show', compact('getMovie'));
