@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="now-playing-movies py-24">
-            <h2 class="uppercase tracking-wider text-purple-600 text-lg font-semibold">Now Playing</h2>
+            <h2 class="uppercase tracking-wider text-purple-600 text-lg font-semibold">Now Playings</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                 @forelse ($nowPlayingMovies as $playingMovie)
                     <div class="mt-8">
