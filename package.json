@@ -13,7 +13,8 @@
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.4.5"
+        "postcss": "^8.4.5",
+        "tailwindcss-spinner": "^1.2.0"
     },
     "dependencies": {
         "autoprefixer": "^10.4.2",
