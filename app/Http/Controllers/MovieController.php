@@ -22,7 +22,7 @@ class MovieController extends Controller
         $nowPlayingMovies = Http::get("https://api.themoviedb.org/3/movie/now_playing?api_key={$this->apiKey}")
                                 ->json()['results'];
 
-        $genresMovies = Http::get("https://api.themoviedb.org/3//genre/movie/list?api_key={$this->apiKey}")
+        $genresMovies = Http::get("https://api.themoviedb.org/3/genre/movie/list?api_key={$this->apiKey}")
                                 ->json()['genres'];
 
         $genres = collect($genresMovies)->mapWithKeys(function ($key) {
