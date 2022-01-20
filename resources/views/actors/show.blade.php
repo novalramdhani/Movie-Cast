@@ -47,11 +47,14 @@
 
                 <h4 class="font-semibold mt-12">Known For</h4>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-                    <div class="mt-4">
-                        <a href="">
-                            <img src="" alt="poster">
-                        </a>
-                    </div>
+                    @foreach ($knowForMovies as $movie)
+                        <div class="mt-4">
+                            <a href="{{ route('movies.show', $movie['id']) }}">
+                                <img src="{{ $movie['poster_path'] }}" alt="poster">
+                            </a>
+                            <a href="{{ route('movies.show', $movie['id']) }}" class="text-sm leading-normal block text-gray-400 hover:text-white mt-1">{{ $movie['title'] }}</a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -60,7 +63,14 @@
     <div class="credits border-b border-gray-800">
         <div class="container mx-auto px-4 py-16">
             <h2 class="text-4xl font-semibold">Credits</h2>
-            <ul class="list-disc leading-loose pl-5 mt-8"></ul>
+            <ul class="list-disc leading-loose pl-5 mt-8">
+                @foreach ($credits as $credit)
+                    <li>
+                        {{ $credit['release_date'] }} &middot;
+                        <strong><a href="{{ $credit['linkToPage'] }}" class="hover:underline">{{ $credit['title'] }}</a></strong> as {{ $credit['character'] }}
+                    </li>
+                @endforeach
+            </ul>
         </div>
     </div>
 </x-app-layout>
