@@ -1,5 +1,5 @@
-# Lara Movie
-Lara Movie - Movie & Tv Shows App. (Powered by [Tmdb API](https://www.themoviedb.org/documentation/api))
+# Movie Cast
+Movie Cast - Movie & Tv Shows App. (Powered by [Tmdb API](https://www.themoviedb.org/documentation/api))
 
 ## Demo
 

@@ -29,7 +29,7 @@ class MovieController extends Controller
             return [$key['id'] => $key['name']];
         });
 
-        return view('index', [
+        return view('movies.index', [
             'popularMovies' => $popularMovies,
             'genres' => $genres,
             'nowPlayingMovies' => $nowPlayingMovies
@@ -41,6 +41,6 @@ class MovieController extends Controller
         $getMovie = Http::get("https://api.themoviedb.org/3/movie/{$id}?api_key={$this->apiKey}&append_to_response=credits,videos,images")
         ->json();
 
-        return view('show', compact('getMovie'));
+        return view('movies.show', compact('getMovie'));
     }
 }

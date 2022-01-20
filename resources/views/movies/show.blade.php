@@ -1,4 +1,4 @@
-<x-app-layout title="Detail Movie">
+<x-app-layout title="Movie Cast - Detail Movie {{ $getMovie['title'] }}">
     <div class="movie-info border-b border-gray-800">
         <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
             <div class="flex-none">
@@ -32,6 +32,8 @@
                                     <div>{{ $crew['name'] }}</div>
                                     <div class="text-sm text-gray-400">{{ $crew['job'] }}</div>
                                 </div>
+                            @else
+                                @break
                             @endif
                         @endforeach
                     </div>
@@ -82,6 +84,8 @@
                                 </div>
                             </div>
                         </div>
+                    @else
+                        @break
                     @endif
                 @endforeach
             </div>
@@ -103,6 +107,8 @@
                             }}" alt="Images" class="hover:opacity-75 transition ease-in-out duration-150">
                             </a>
                         </div>
+                    @else
+                        @break
                     @endif
                 @endforeach
             </div>

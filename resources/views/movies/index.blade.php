@@ -1,4 +1,4 @@
-<x-app-layout title="Lara Movie">
+<x-app-layout title="Movie Cast - Movie & Tv Shows">
     <div class="container px-4 pt-16">
         <div class="popular-movies">
             <h1 class="uppercase tracking-wider text-purple-600 text-lg font-semibold">Popular Movies</h1>
