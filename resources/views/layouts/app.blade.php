@@ -30,7 +30,7 @@
                     <a href="" class="hover:text-gray-300">TV Shows</a>
                 </li>
                 <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="" class="hover:text-gray-300">Actors</a>
+                    <a href="{{ route('actors.index') }}" class="hover:text-gray-300">Actors</a>
                 </li>
                 <li class="md:ml-6 mt-3 md:mt-0">
                     <a href="" class="hover:text-gray-300">Ani Cast</a>
@@ -48,11 +48,12 @@
     <main id="movie-app">
         {{ $slot }}
     </main>
-    <footer class="border border-t border-gray-800">
+    <footer class="border border-t border-gray-800 mt-8">
         <div class="container justify-between mx-auto text-sm px-4 py-6">
             &copy; <a href="" class="text-purple-600 underline">Noval Ramdhani</a> {{ date('Y') }}. Powered by <a href="https://www.themoviedb.org/documentation/api" class="underline hover:text-gray-300">TMDb API</a>
         </div>
     </footer>
+    @yield('scripts')
     <livewire:scripts />
 </body>
 </html>
