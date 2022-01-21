@@ -2,6 +2,7 @@
 Movie Cast - Movie & Tv Shows App. (Powered by [Tmdb API](https://www.themoviedb.org/documentation/api))
 
 ## Demo
+[Click here.](http://movie-cast.herokuapp.com/)
 
 ## Features
 - List Movies Page
