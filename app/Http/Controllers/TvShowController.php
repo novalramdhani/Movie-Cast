@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class TvShowController extends Controller
 {
-    private $apiKey;
+    private string $apiKey;
 
     public function __construct()
     {

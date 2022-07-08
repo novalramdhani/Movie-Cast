@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Http;
 
 class ActorController extends Controller
 {
-    private $apiKey;
+    private string $apiKey;
 
-    public $page;
+    public int $page;
 
     public function __construct()
     {
