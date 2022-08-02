@@ -13,46 +13,11 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="font-sans bg-gray-900 text-white">
-    <nav class="border-b border-gray-800">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between px-4 py-6">
-            <ul class="flex flex-col md:flex-row items-center">
-                <li>
-                    <a href="{{ route('movies.index') }}">
-                        <div class="text-lg text-3xl uppercase font-semibold">
-                            <h1>{{ config('app.name') }}</h1>
-                        </div>
-                    </a>
-                </li>
-                <li class="md:ml-16 mt-3 md:mt-0">
-                    <a href="{{ route('movies.index') }}" class="hover:text-gray-300">Movies</a>
-                </li>
-                <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="{{ route('tv.index') }}" class="hover:text-gray-300">TV Shows</a>
-                </li>
-                <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="{{ route('actors.index') }}" class="hover:text-gray-300">Actors</a>
-                </li>
-                <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="" class="hover:text-gray-300">Ani Cast</a>
-                </li>
-            </ul>
-            <div class="flex flex-col md:flex-row items-center">
-                <livewire:search-dropdown />
-                <div class="md:ml-4 mt-3 md:mt-0">
-                    <img src="https://i.pravatar.cc/150" alt="Avatar" class="rounded-full h-8 w-8">
-                </div>
-            </div>
-
-        </div>
-    </nav>
+    <x-navbar />
     <main id="movie-app">
         {{ $slot }}
     </main>
-    <footer class="border border-t border-gray-800 mt-5">
-        <div class="container justify-between mx-auto text-sm px-4 py-6">
-            &copy; <a href="" class="text-purple-600 underline">Noval Ramdhani</a> {{ date('Y') }}. Powered by <a href="https://www.themoviedb.org/documentation/api" class="underline hover:text-gray-300">TMDb API</a>
-        </div>
-    </footer>
+    <x-footer />
     @yield('scripts')
     <livewire:scripts />
 </body>
